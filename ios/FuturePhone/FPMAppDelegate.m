@@ -8,13 +8,19 @@
 #import <Crashlytics/Crashlytics.h>
 
 #import "FPMAppDelegate.h"
+#import "FPMCredentialStore.h"
 
 @implementation FPMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"1a41139c46f6ca7cad9edd61ce5f62ba8d4516b5"];
-    return YES;
+  [Crashlytics startWithAPIKey:@"1a41139c46f6ca7cad9edd61ce5f62ba8d4516b5"];
+//  if ([FPMCredentialStore savedSessionKeyAndPhoneNumber]) {
+//    // TODO display record view controller
+//  } else {
+//    // TODO login
+//  }
+  return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

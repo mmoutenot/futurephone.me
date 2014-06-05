@@ -41,6 +41,10 @@
 		A6C6955C1933B3B700CF6F94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C6955A1933B3B700CF6F94 /* InfoPlist.strings */; };
 		A6C6955E1933B3B700CF6F94 /* FuturePhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C6955D1933B3B700CF6F94 /* FuturePhoneTests.m */; };
 		A6C6AD8A1938145400E217EE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C6AD891938145400E217EE /* Crashlytics.framework */; };
+		BFA46EC31940068000F9AEAE /* FPMCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA46EC01940068000F9AEAE /* FPMCredentialStore.m */; };
+		BFA46EC41940068000F9AEAE /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA46EC21940068000F9AEAE /* KeychainItemWrapper.m */; };
+		BFA46EC6194006DF00F9AEAE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA46EC5194006DF00F9AEAE /* Security.framework */; };
+		BFA46EC8194006F100F9AEAE /* FPMCredentialStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA46EC7194006F100F9AEAE /* FPMCredentialStoreTests.m */; };
 		BFE358A91935788C004C2FBD /* FPMDispatchMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE358A81935788C004C2FBD /* FPMDispatchMessageViewController.m */; };
 		BFE358AB1938160E004C2FBD /* FPMDispatchViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE358AA1938160E004C2FBD /* FPMDispatchViewControllerTests.m */; };
 /* End PBXBuildFile section */
@@ -97,6 +101,12 @@
 		A6C6955B1933B3B700CF6F94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6C6955D1933B3B700CF6F94 /* FuturePhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuturePhoneTests.m; sourceTree = "<group>"; };
 		A6C6AD891938145400E217EE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		BFA46EBF1940068000F9AEAE /* FPMCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMCredentialStore.h; sourceTree = "<group>"; };
+		BFA46EC01940068000F9AEAE /* FPMCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMCredentialStore.m; sourceTree = "<group>"; };
+		BFA46EC11940068000F9AEAE /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		BFA46EC21940068000F9AEAE /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		BFA46EC5194006DF00F9AEAE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BFA46EC7194006F100F9AEAE /* FPMCredentialStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMCredentialStoreTests.m; sourceTree = "<group>"; };
 		BFE358A71935788C004C2FBD /* FPMDispatchMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMDispatchMessageViewController.h; sourceTree = "<group>"; };
 		BFE358A81935788C004C2FBD /* FPMDispatchMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMDispatchMessageViewController.m; sourceTree = "<group>"; };
 		BFE358AA1938160E004C2FBD /* FPMDispatchViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMDispatchViewControllerTests.m; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA46EC6194006DF00F9AEAE /* Security.framework in Frameworks */,
 				A6192DA71933B6A30053974D /* AVFoundation.framework in Frameworks */,
 				A6C695351933B3B700CF6F94 /* CoreGraphics.framework in Frameworks */,
 				A6C695371933B3B700CF6F94 /* UIKit.framework in Frameworks */,
@@ -176,6 +187,7 @@
 		A6C695311933B3B700CF6F94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFA46EC5194006DF00F9AEAE /* Security.framework */,
 				A6C6AD891938145400E217EE /* Crashlytics.framework */,
 				A6192DA61933B6A30053974D /* AVFoundation.framework */,
 				A6C695321933B3B700CF6F94 /* Foundation.framework */,
@@ -196,8 +208,14 @@
 				A6C695481933B3B700CF6F94 /* FPMRecordViewController.m */,
 				BFE358A71935788C004C2FBD /* FPMDispatchMessageViewController.h */,
 				BFE358A81935788C004C2FBD /* FPMDispatchMessageViewController.m */,
+				BFA46EBF1940068000F9AEAE /* FPMCredentialStore.h */,
+				BFA46EC01940068000F9AEAE /* FPMCredentialStore.m */,
+				BFA46EC11940068000F9AEAE /* KeychainItemWrapper.h */,
+				BFA46EC21940068000F9AEAE /* KeychainItemWrapper.m */,
 				A6C6954A1933B3B700CF6F94 /* Images.xcassets */,
 				A6C695441933B3B700CF6F94 /* Main.storyboard */,
+				A6847E87193EAABC0034859F /* FPMOnboardViewController.h */,
+				A6847E88193EAABC0034859F /* FPMOnboardViewController.m */,
 				A6C695391933B3B700CF6F94 /* Supporting Files */,
 				A6847E87193EAABC0034859F /* FPMOnboardViewController.h */,
 				A6847E88193EAABC0034859F /* FPMOnboardViewController.m */,
@@ -219,9 +237,10 @@
 		A6C695571933B3B700CF6F94 /* FuturePhoneTests */ = {
 			isa = PBXGroup;
 			children = (
+				BFA46EC7194006F100F9AEAE /* FPMCredentialStoreTests.m */,
 				A6C6955D1933B3B700CF6F94 /* FuturePhoneTests.m */,
-				A6C695581933B3B700CF6F94 /* Supporting Files */,
 				BFE358AA1938160E004C2FBD /* FPMDispatchViewControllerTests.m */,
+				A6C695581933B3B700CF6F94 /* Supporting Files */,
 			);
 			path = FuturePhoneTests;
 			sourceTree = "<group>";
@@ -405,7 +424,9 @@
 				BFE358A91935788C004C2FBD /* FPMDispatchMessageViewController.m in Sources */,
 				A6C695431933B3B700CF6F94 /* FPMAppDelegate.m in Sources */,
 				A6C6953F1933B3B700CF6F94 /* main.m in Sources */,
+				BFA46EC31940068000F9AEAE /* FPMCredentialStore.m in Sources */,
 				A6C695491933B3B700CF6F94 /* FPMRecordViewController.m in Sources */,
+				BFA46EC41940068000F9AEAE /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFE358AB1938160E004C2FBD /* FPMDispatchViewControllerTests.m in Sources */,
+				BFA46EC8194006F100F9AEAE /* FPMCredentialStoreTests.m in Sources */,
 				A6C6955E1933B3B700CF6F94 /* FuturePhoneTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
